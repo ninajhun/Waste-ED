@@ -1,5 +1,7 @@
 import "./App.css";
 
+//render LandingPage and HomePage
+//change view w/ setView()
 function App() {
   return (
     <div className="App">
