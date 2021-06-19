@@ -25,7 +25,7 @@ let data = [
 //loop thru pantry if pantry.status === "uneaten" render eaten component
 //or maybe filter return arr
 
-//can you see me?
+//can you see me?!
 
 // var todos = [];
 
