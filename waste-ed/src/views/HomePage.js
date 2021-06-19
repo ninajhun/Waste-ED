@@ -24,15 +24,12 @@ export default function HomePage() {
         <Row>
           <Col sm={12} md={4} lg={4}>
             <UneatenItem />
-            {/* <p>uneaten food component</p> */}
           </Col>
           <Col sm={12} md={4} lg={4}>
             <EatenItem />
-            {/* <p>eaten food component</p> */}
           </Col>
           <Col sm={12} md={4} lg={4}>
             <WastedItem />
-            {/* <p>wasted food component</p> */}
           </Col>
         </Row>
       </Container>
