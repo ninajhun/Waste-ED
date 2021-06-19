@@ -35,3 +35,5 @@ function beforeUnload(event) {
   const localData = JSON.stringify(data);
   localStorage.setItem("local-data", localData);
 }
+
+export { data };
