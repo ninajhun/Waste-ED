@@ -2,6 +2,9 @@ import React from "react";
 import AddItemBar from "../components/AddItemBar"
 import { Container, Row, Col } from "react-bootstrap";
 import fetchAPI from "../fetchAPI"
+import UneatenItem from "../components/UneatenItem";
+import EatenItem from "../components/EatenItem";
+import WastedItem from "../components/WastedItem";
 
 export default function HomePage() {
   const input = 'banana';
@@ -20,13 +23,16 @@ export default function HomePage() {
       <Container>
         <Row>
           <Col sm={12} md={4} lg={4}>
-            <p>uneaten food component</p>
+            <UneatenItem />
+            {/* <p>uneaten food component</p> */}
           </Col>
           <Col sm={12} md={4} lg={4}>
-            <p>eaten food component</p>
+            <EatenItem />
+            {/* <p>eaten food component</p> */}
           </Col>
           <Col sm={12} md={4} lg={4}>
-            <p>wasted food component</p>
+            <WastedItem />
+            {/* <p>wasted food component</p> */}
           </Col>
         </Row>
       </Container>
