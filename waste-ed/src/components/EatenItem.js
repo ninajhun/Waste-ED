@@ -17,14 +17,14 @@ class EatenItem extends React.Component {
           foodItem: "lettuce",
           servings: 3,
           expiration: 3,
-          img: "src-link",
+          img: "https://www.vhv.rs/dpng/d/88-883016_iceberg-lettuce-png-transparent-png.png",
           status: "uneaten",
         },
         {
           foodItem: "milk ",
           servings: 1,
           expiration: 6,
-          img: "src-link",
+          img: "https://toppng.com/uploads/preview/milk-png-115540200115wsmxoplcu.png",
           status: "waste",
         }
       ]

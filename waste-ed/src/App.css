@@ -36,22 +36,26 @@
 .food-text {
   display: flex;
   flex-direction: column;
-  margin: 0 1rem;
+  margin: auto 1rem;
 }
 
 .icon {
   margin: 0 0.5rem;
 }
 
-.recent {
+.green {
   background-color: #d4ffcd;
 }
 
-.soon {
+.yellow {
   background-color: #fff1cd;
 }
 
-.expired {
+.yellow-text {
+  color: #a36b18;
+}
+
+.red {
   background-color: #ffe1e1;
 }
 
@@ -59,18 +63,19 @@
   text-align: start;
 }
 
-.check-mark {
+.check-mark,
+.green-text {
   color: #0bb80b;
 }
 
-.trash {
+.trash,
+.red-text {
   color: #e55c5c;
 }
 
 .number-days {
   display: block;
   font-size: 15px;
-  color: red;
 }
 
 .food-image {

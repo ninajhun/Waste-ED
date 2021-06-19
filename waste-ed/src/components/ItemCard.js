@@ -2,12 +2,16 @@ import React from 'react';
 
 export default function ItemCard(props) {
   let cardClass = '';
+  let numberFont = '';
   if (props.item.expiration >= 4) {
-    cardClass = 'recent'
+    cardClass = 'green';
+    numberFont = 'green-text'
   } else if (props.item.expiration > 1 && props.item.expiration <= 3) {
-    cardClass = 'soon'
+    cardClass = 'yellow';
+    numberFont = 'yellow-text';
   } else {
-    cardClass = 'expired'
+    cardClass = 'red';
+    numberFont = 'red-text'
   }
 
   const status = props.item.status;
@@ -21,7 +25,7 @@ export default function ItemCard(props) {
             ?
             <>
               <span className="food-name">{props.item.foodItem}</span>
-              <span className="number-days">{`${props.item.expiration} days`}</span>
+              <span className={`${numberFont} number-days`}>{`${props.item.expiration} days`}</span>
             </>
             :
             <span className="food-name">{props.item.foodItem}</span>
