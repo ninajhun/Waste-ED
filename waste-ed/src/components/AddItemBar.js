@@ -1,20 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { data } from "../data";
 import "./components.css";
-// import Form from "react-bootstrap/Form";
-// import InputGroup from "react-bootstrap/InputGroup";
 import { Form, InputGroup } from "react-bootstrap";
 
 export default function AddItemBar() {
-  console.log(data);
+  const [value, setValue] = useState("");
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault(event);
+    // console.log(value);
+  };
+
   return (
     <>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group>
           <InputGroup className="mb-3">
             <InputGroup.Text id="basic-addon1">+</InputGroup.Text>
             <Form.Control
               as="input"
+              onChange={handleChange}
               placeholder="Add item"
               aria-label="Add item"
               aria-describedby="basic-addon1"
@@ -25,3 +34,5 @@ export default function AddItemBar() {
     </>
   );
 }
+
+//on submit -> add item object to local storage
