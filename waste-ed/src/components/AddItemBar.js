@@ -13,6 +13,7 @@ export default function AddItemBar() {
   const handleSubmit = (event) => {
     event.preventDefault(event);
     // console.log(value);
+    console.log(data);
 
     const newItem = {
       foodItem: value.toLowerCase(),
@@ -20,9 +21,11 @@ export default function AddItemBar() {
       expiration: 7,
       img: "",
       status: "uneaten",
+      itemID: data.nextId,
     };
 
-    data.push(newItem);
+    data.food.push(newItem);
+    data.nextId++;
   };
 
   return (
@@ -47,9 +50,9 @@ export default function AddItemBar() {
         </Form.Group>
       </Form>
 
-      {data.map((foodItem) => (
+      {/* {data.map((foodItem) => (
         <p>{foodItem.foodItem}</p>
-      ))}
+      ))} */}
     </>
   );
 }
