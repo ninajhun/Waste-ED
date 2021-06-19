@@ -9,11 +9,8 @@ function AddItemBar() {
 
   const handleChange = (event) => {
     setValue(event.target.value);
-    // const { foodData } =
-    fetchFoodAPI(event.target.value);
-    // console.log(foodData);
-
-    // setFoodSuggestions();
+    const foodData = fetchFoodAPI(event.target.value);
+    foodData.then((data) => setFoodSuggestions(data));
   };
 
   const handleSubmit = (event) => {

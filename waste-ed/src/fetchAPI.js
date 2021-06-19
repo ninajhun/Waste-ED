@@ -2,18 +2,19 @@
 // const APP_KEY = process.env.REACT_APP_KEY;
 const { REACT_APP_KEY, REACT_APP_ID } = process.env;
 
-const fetchFoodAPI = (input) => {
-  fetchAPI(
+const fetchFoodAPI = async (input) => {
+  const data = await fetchAPI(
     `https://trackapi.nutritionix.com/v2/search/instant?branded=false&query=${input}`,
     input
   ).then((data) => {
-    // if (data.length) {
-    // console.log(data.common.splice(0, 5));
-    const foodData = data.common.splice(0, 5);
-    console.log(foodData);
-    return foodData;
+    // if (dat) {
+    return data.common.splice(0, 5);
+    // } else {
+    //   return [];
     // }
   });
+
+  return data;
 };
 
 async function fetchAPI(url, data) {
@@ -25,6 +26,7 @@ async function fetchAPI(url, data) {
       "x-remote-user-id": 0,
     },
   });
+  // console.log(response);
   return response.json();
 }
 
