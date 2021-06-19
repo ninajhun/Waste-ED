@@ -25,17 +25,13 @@ let data = [
 //loop thru pantry if pantry.status === "uneaten" render eaten component
 //or maybe filter return arr
 
-//can you see me?!
+const previousData = localStorage.getItem("local-data");
+if (previousData !== null) {
+  data = JSON.parse(previousData);
+}
+window.addEventListener("beforeunload", beforeUnload);
 
-// var todos = [];
-
-// var previousTodosJSON = localStorage.getItem("javascript-local-storage");
-
-// if (previousTodosJSON !== null) {
-//   todos = JSON.parse(previousTodosJSON);
-// }
-
-// window.addEventListener("beforeunload", function (event) {
-//   var todosJSON = JSON.stringify(todos);
-//   localStorage.setItem("javascript-local-storage", todosJSON);
-// });
+function beforeUnload(event) {
+  const localData = JSON.stringify(data);
+  localStorage.setItem("local-data", localData);
+}
