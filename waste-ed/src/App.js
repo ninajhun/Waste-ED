@@ -4,11 +4,13 @@ import "./App.css";
 //change view w/ setView()
 function App() {
   return (
+    <>
     <div className="App">
       <header className="App-header">
         <p>Wasted-ED</p>
       </header>
     </div>
+    </>
   );
 }
 

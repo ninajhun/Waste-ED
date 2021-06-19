@@ -22,6 +22,7 @@ let data = [
   },
 ];
 
+
 //loop thru pantry if pantry.status === "uneaten" render eaten component
 //or maybe filter return arr
 
