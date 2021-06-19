@@ -13,6 +13,16 @@ export default function AddItemBar() {
   const handleSubmit = (event) => {
     event.preventDefault(event);
     // console.log(value);
+
+    const newItem = {
+      foodItem: value.toLowerCase(),
+      servings: 1,
+      expiration: 7,
+      img: "",
+      status: "uneaten",
+    };
+
+    data.push(newItem);
   };
 
   return (
@@ -31,6 +41,10 @@ export default function AddItemBar() {
           </InputGroup>
         </Form.Group>
       </Form>
+
+      {data.map((foodItem) => (
+        <p>{foodItem.foodItem}</p>
+      ))}
     </>
   );
 }
