@@ -6,6 +6,7 @@ import UneatenItem from "../components/UneatenItem";
 import EatenItem from "../components/EatenItem";
 import WastedItem from "../components/WastedItem";
 
+
 export default function HomePage() {
   const input = 'banana';
   fetchAPI(`https://trackapi.nutritionix.com/v2/search/instant?branded=false&query=${input}`, input)

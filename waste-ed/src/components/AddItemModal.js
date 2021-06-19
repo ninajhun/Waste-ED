@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {
-  Modal,
-  Button,
-  InputGroup,
-  FormControl,
-  Container,
-  Row,
-  Col,
-  Dropdown,
-  DropdownButton,
-} from "react-bootstrap";
-
-export default function AddItemModal() {
+import { Modal, Button, Container, Row, Col } from "react-bootstrap";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+const App = () => {
   const [startDate, setStartDate] = useState(new Date());
+
+  const handleSave = () => {};
+  // const addDays = () => {
+  //   setStartDate(useState.setDate(useState.getDate() + 10))
+  // }
 
   return (
     <Modal.Dialog className="h-50 inline-block w-70">
@@ -34,13 +29,11 @@ export default function AddItemModal() {
         <Container>
           <Row className="m-2 ">
             <Col xs={5}>
-              <label class="input-group-text" for="inputGroupSelect01">
-                Days
-              </label>
+              <label className="input-group-text">Date</label>
             </Col>
             <Col xs={7}>
-              <div class="container">
-                <div class="row">
+              <div className="container">
+                <div className="row">
                   <DatePicker
                     selected={startDate}
                     onChange={(date) => setStartDate(date)}
@@ -51,15 +44,13 @@ export default function AddItemModal() {
           </Row>
           <Row className="m-2 ">
             <Col xs={5}>
-              <label class="input-group-text" for="inputGroupSelect01">
-                Days
-              </label>
+              <label className="input-group-text">Days</label>
             </Col>
             <Col xs={7}>
-              <div class="input-group mb-3">
-                <div class="input-group-prepend"></div>
-                <select class="custom-select" id="inputGroupSelect01">
-                  <option selected>7</option>
+              <div className="input-group mb-3">
+                <div className="input-group-prepend"></div>
+                <select className="custom-select" id="inputGroupSelect01">
+                  <option defaultValue>7</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -76,15 +67,13 @@ export default function AddItemModal() {
           </Row>
           <Row className="m-2">
             <Col xs={5}>
-              <label className="input-group-text" for="inputGroupSelect01">
-                Servings
-              </label>
+              <label className="input-group-text">Servings</label>
             </Col>
             <Col xs={7}>
               <div className="input-group mb-3">
                 <div className="input-group-prepend"></div>
                 <select className="custom-select" id="inputGroupSelect01">
-                  <option selected>1</option>
+                  <option defaultValue>1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
                   <option value="4">4</option>
@@ -103,10 +92,12 @@ export default function AddItemModal() {
       </Modal.Body>
 
       <Modal.Footer className="mx-auto">
-        <Button className="" variant="secondary">
+        <Button className="" variant="secondary" onClick={handleSave}>
           Save
         </Button>
       </Modal.Footer>
     </Modal.Dialog>
   );
-}
+};
+
+export default App;
