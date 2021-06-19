@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { data } from "../data";
 import { Form, InputGroup } from "react-bootstrap";
+import { fetchFoodAPI } from "../fetchAPI";
 
-export default function AddItemBar() {
+function AddItemBar() {
   const [value, setValue] = useState("");
+  const [foodSuggestions, setFoodSuggestions] = useState([]);
 
   const handleChange = (event) => {
     setValue(event.target.value);
+    // const { foodData } =
+    fetchFoodAPI(event.target.value);
+    // console.log(foodData);
+
+    // setFoodSuggestions();
   };
 
   const handleSubmit = (event) => {
@@ -48,3 +55,5 @@ export default function AddItemBar() {
     </>
   );
 }
+
+export { AddItemBar };
