@@ -1,6 +1,5 @@
 import React from 'react';
 import ItemCard from './ItemCard';
-// import data from '../data';
 
 class UneatenItem extends React.Component {
   constructor(props) {
@@ -35,7 +34,6 @@ class UneatenItem extends React.Component {
 
   render() {
     const uneaten = this.state.items.filter(item => item.status === 'uneaten')
-    // console.log(uneaten);
     const foodItems = uneaten.map(item => {
       return (
         <ItemCard key={item.foodItem} item={item}/>

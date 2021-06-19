@@ -17,13 +17,27 @@ export default function ItemCard(props) {
         <div className="display-item">
           <img src={props.item.img} alt="food" className="food-image"/>
           <div className="food-text">
+            {status === 'uneaten'
+            ?
+            <>
+              <span className="food-name">{props.item.foodItem}</span>
+              <span className="number-days">{`${props.item.expiration} days`}</span>
+            </>
+            :
             <span className="food-name">{props.item.foodItem}</span>
-            <span className="number-days">{`${props.item.expiration} days`}</span>
+            }
           </div>
         </div>
         <div className="icons">
-          <i className="fas fa-check icon check-mark"></i>
-          <i className="fas fa-trash-alt icon trash"></i>
+          {status === 'uneaten'
+          ?
+          <>
+            <i className="fas fa-check icon check-mark"></i>
+            <i className="fas fa-trash-alt icon trash"></i>
+          </>
+          :
+          <i className="fas fa-plus plus"></i>
+          }
         </div>
       </div>
     </>
