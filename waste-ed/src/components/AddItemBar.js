@@ -5,24 +5,32 @@ import { fetchFoodAPI } from "../fetchAPI";
 
 function AddItemBar() {
   const [value, setValue] = useState("");
-  const [foodSuggestions, setFoodSuggestions] = useState([]);
+  const [foodSuggestions, setFoodSuggestions] = useState([]); //array of 5 results for autocomplete
+  const [foodPic, setFoodPic] = useState("");
 
   const handleChange = (event) => {
     setValue(event.target.value);
     if (event.target.value) {
-      const foodData = fetchFoodAPI(event.target.value);
-      foodData.then((data) => setFoodSuggestions(data));
+      const foodData = fetchFoodAPI(event.target.value); //fetch API
+      foodData.then((data) => {
+        setFoodSuggestions(data);
+        setFoodPic(data[0].photo.thumb); //set food pic
+      });
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault(event);
 
+    if (value === "" || value === " ") {
+      return;
+    }
+
     const newItem = {
       foodItem: value.toLowerCase(),
       servings: 1,
       expiration: 7,
-      img: "",
+      img: foodPic,
       status: "uneaten",
       itemID: data.nextId,
     };
