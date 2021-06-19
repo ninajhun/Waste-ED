@@ -5,7 +5,6 @@ import HomePage from "./views/HomePage";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-<<<<<<< HEAD
   const [view, setView] = useState("home-page");
 
   if (view === "landing-page") {
@@ -23,17 +22,6 @@ function App() {
       </div>
     );
   }
-=======
-  return (
-    <>
-    <div className="App">
-      <header className="App-header">
-        <p>Wasted-ED</p>
-      </header>
-    </div>
-    </>
-  );
->>>>>>> 7a24af26417a94608c6516569a4b36736946ef38
 }
 
 export default App;
