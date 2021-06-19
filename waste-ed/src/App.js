@@ -4,7 +4,7 @@ import LandingPage from "./views/LandingPage";
 import HomePage from "./views/HomePage";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() 
+function App() {
   const [view, setView] = useState("home-page");
 
   if (view === "landing-page") {
