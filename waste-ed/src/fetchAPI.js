@@ -5,7 +5,7 @@ const fetchFoodAPI = async (input) => {
     `https://trackapi.nutritionix.com/v2/search/instant?branded=false&query=${input}`,
     input
   ).then((data) => {
-    return data.common.splice(0, 5);
+    return data;
   });
 
   return data;
