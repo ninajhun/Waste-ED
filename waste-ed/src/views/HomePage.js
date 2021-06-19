@@ -5,8 +5,8 @@ import { Container, Row, Col } from "react-bootstrap";
 export default function HomePage() {
   return (
     <>
-      <Container>
-        <AddItemBar />
+      <Container className="mt-5">
+        <AddItemBar mt={5} />
       </Container>
       <Container>
         <Row>

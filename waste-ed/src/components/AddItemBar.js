@@ -1,8 +1,9 @@
 import React from "react";
 import { data } from "../data";
+import "./components.css";
 // import Form from "react-bootstrap/Form";
 // import InputGroup from "react-bootstrap/InputGroup";
-import { Form } from "react-bootstrap";
+import { Form, InputGroup } from "react-bootstrap";
 
 export default function AddItemBar() {
   console.log(data);
@@ -10,9 +11,15 @@ export default function AddItemBar() {
     <>
       <Form>
         <Form.Group>
-          <Form.Control as="input" placeholder="Add item">
-            {/* <InputGroup>Add item</InputGroup> */}
-          </Form.Control>
+          <InputGroup className="mb-3">
+            <InputGroup.Text id="basic-addon1">+</InputGroup.Text>
+            <Form.Control
+              as="input"
+              placeholder="Add item"
+              aria-label="Add item"
+              aria-describedby="basic-addon1"
+            ></Form.Control>
+          </InputGroup>
         </Form.Group>
       </Form>
     </>
