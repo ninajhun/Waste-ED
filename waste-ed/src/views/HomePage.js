@@ -3,6 +3,7 @@ import AddItemBar from "../components/AddItemBar"
 import { Container, Row, Col } from "react-bootstrap";
 import fetchAPI from "../fetchAPI"
 
+
 export default function HomePage() {
   const input = 'banana';
   fetchAPI(`https://trackapi.nutritionix.com/v2/search/instant?branded=false&query=${input}`, input)
