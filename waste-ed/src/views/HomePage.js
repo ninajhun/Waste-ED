@@ -11,13 +11,13 @@ export default function HomePage() {
       <Container>
         <Row>
           <Col sm={12} md={4} lg={4}>
-            <p>uneaten food</p>
+            <p>uneaten food component</p>
           </Col>
           <Col sm={12} md={4} lg={4}>
-            <p>eaten food</p>
+            <p>eaten food component</p>
           </Col>
           <Col sm={12} md={4} lg={4}>
-            <p>wasted food</p>
+            <p>wasted food component</p>
           </Col>
         </Row>
       </Container>
