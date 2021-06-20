@@ -23,6 +23,14 @@ let data = {
       img: "img",
       status: "uneaten",
       itemID: 3,
+    },
+    {
+      foodItem: 'strawberries',
+      servings: 1,
+      expiration: 1,
+      img: "img",
+      status: "uneaten",
+      itemID: 3,
     }
   ],
   nextId: 1,
