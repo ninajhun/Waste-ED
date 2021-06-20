@@ -1,44 +1,39 @@
 import React from 'react';
 import ItemCard from './ItemCard';
+import { data } from '../data';
+
 
 class UneatenItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [
-        {
-          foodItem: "eggs",
-          servings: 2,
-          expiration: 1,
-          img: "https://toppng.com/uploads/preview/eggs-11528350931egreshkuji.png",
-          status: "eaten",
-        },
-        {
-          foodItem: "lettuce",
-          servings: 3,
-          expiration: 3,
-          img: "https://www.vhv.rs/dpng/d/88-883016_iceberg-lettuce-png-transparent-png.png",
-          status: "uneaten",
-        },
-        {
-          foodItem: "milk ",
-          servings: 1,
-          expiration: 6,
-          img: "https://toppng.com/uploads/preview/milk-png-115540200115wsmxoplcu.png",
-          status: "waste",
-        }
-      ]
+      items: data.food
+    }
+    // this.updateList = this.updateList.bind(this);
+  }
+
+  // updateList() {
+  //   this.setState({ items: data.food });
+  //   console.log('hi');
+  // }
+
+  componentDidUpdate(prevProps) {
+    console.log('prevProps:', prevProps);
+    console.log('this.props:', this.props);
+    console.log('this.state:', this.state);
+    if (this.props.status !== prevProps.status) {
+      this.setState({ status: this.state.status });
     }
   }
 
-
   render() {
-    const uneaten = this.state.items.filter(item => item.status === 'uneaten')
+    console.log('data', data);
+    const uneaten = this.props.uneatenItems.filter(item => item.status === 'uneaten');
     const foodItems = uneaten.map(item => {
       return (
-        <ItemCard key={item.foodItem} item={item}/>
+        <ItemCard key={item.itemID} item={item} itemId={item.itemID}/>
       )
-    })
+    });
     return (
       <>
         <div className="uneaten-container">
