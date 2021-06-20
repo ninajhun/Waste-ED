@@ -1,34 +1,23 @@
 import React from 'react';
 import ItemCard from './ItemCard';
-import { data } from '../data';
-
 
 class EatenItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      items: data.food
-    }
-    // this.updateList = this.updateList.bind(this);
+    this.updateItem = this.updateItem.bind(this);
   }
 
-  // updateList() {
-  //   this.setState({ items: data.food });
-  //   console.log('hi');
-  // }
-
-  // componentDidUpdate() {
-
-  // }
+  updateItem(item, status) {
+    this.props.updateItem(item, status);
+  }
 
   render() {
-  console.log('data', data);
-    const eaten = this.props.eatenItems.filter(item => item.status === 'eaten')
-    const foodItems = eaten.map(item => {
+    const foodItems = this.props.items.filter(item => item.status === 'eaten').map(item => {
       return (
-        <ItemCard key={item.itemID} item={item} itemId={item.itemID} />
+        <ItemCard key={item.itemID} item={item} itemId={item.itemID} onClick={this.updateItem} />
       )
-    })
+    });
+    console.log("eaten items: ", foodItems);
     return (
       <>
         <div className="eaten-container">

@@ -3,7 +3,7 @@ import { data } from "../data";
 import { Form, InputGroup } from "react-bootstrap";
 import { fetchFoodAPI } from "../fetchAPI";
 
-function AddItemBar() {
+export default function AddItemBar() {
   const [value, setValue] = useState("");
   // const [foodSuggestions, setFoodSuggestions] = useState([]); //array of 5 results for autocomplete.
   const [foodPic, setFoodPic] = useState("");

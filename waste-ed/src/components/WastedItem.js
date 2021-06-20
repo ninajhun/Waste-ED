@@ -18,8 +18,8 @@ class WastedItem extends React.Component {
 
   render() {
   console.log('data', data);
-    const wasted = this.props.wastedItems.filter(item => item.status === 'waste')
-    const foodItems = wasted.map(item => {
+    // const wasted = this.props.wastedItems.filter(item => item.status === 'waste')
+    const foodItems = this.props.wastedItems.map(item => {
       return (
         <ItemCard key={item.itemID} item={item} itemId={item.itemID} />
       )

@@ -5,8 +5,9 @@ export default class ItemCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: '',
-      expirationDate: ''
+      status: props.status,
+      expirationDate: props.expiration,
+      updateStatus: props.updateItem
     }
     // this.updateList = this.updateList.bind(this);
   }
@@ -59,13 +60,12 @@ export default class ItemCard extends React.Component {
             ?
             <>
               <i className="fas fa-check icon check-mark" onClick={() => {
-                  this.setState({ status: 'eaten'});
-                  this.props.item.status = 'eaten';
-
+                  this.props.onClick(this.props.item, "eaten");
               }}/>
               <i className="fas fa-trash-alt icon trash" onClick={() => {
-                  this.setState({ status: 'waste'});
-                  this.props.item.status = 'waste';
+                  this.props.onClick(this.props.item, "waste");
+                  // this.setState({ status: 'waste'});
+                  // this.props.item.status = 'waste';
               }} />
             </>
             :
