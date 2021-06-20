@@ -1,4 +1,5 @@
 import React from 'react';
+import {AddItemModal}from '../components/AddItemModal';
 // import { data } from '../data';
 
 export default class ItemCard extends React.Component {
@@ -6,7 +7,8 @@ export default class ItemCard extends React.Component {
     super(props);
     this.state = {
       status: '',
-      expirationDate: ''
+      expirationDate: '',
+      modalShow: false
     }
     // this.updateList = this.updateList.bind(this);
   }
@@ -39,7 +41,8 @@ export default class ItemCard extends React.Component {
 
     return (
       <>
-        < div className={status === 'uneaten' ? `item-card ${cardClass}` : 'item-card'} >
+        < div className={status === 'uneaten' ? `item-card ${cardClass}` : 'item-card'} onClick={() => this.setState({modalShow: true})} >
+          <AddItemModal show={this.state.modalShow}/>
           <div className="display-item">
             <img src={this.props.item.img} alt="food" className="food-image"/>
             <div className="food-text">
