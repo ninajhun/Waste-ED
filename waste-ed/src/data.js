@@ -36,26 +36,6 @@ let data = {
   nextId: 1,
 };
 
-// let data = {
-//   {
-//     foodItem: 'apple',
-//     servings: 1,
-//     expiration: 7,
-//     img: "img",
-//     status: "uneaten",
-//     itemID: 1,
-//   },
-//   {
-//   foodItem: 'apple',
-//     servings: 1,
-//       expiration: 7,
-//         img: "img",
-//           status: "uneaten",
-//             itemID: 2,
-//   }
-
-// };
-
 const previousData = localStorage.getItem("local-data");
 if (previousData !== null) {
   data = JSON.parse(previousData);
