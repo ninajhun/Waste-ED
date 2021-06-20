@@ -1,16 +1,15 @@
-import React from 'react';
-import ItemCard from './ItemCard';
-import { data } from '../data';
-
+import React from "react";
+import ItemCard from "./ItemCard";
+// import { data } from '../data';
 
 class EatenItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: data.food
-    }
-    // this.updateList = this.updateList.bind(this);
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     items: data.food
+  //   }
+  // this.updateList = this.updateList.bind(this);
+  // }
 
   // updateList() {
   //   this.setState({ items: data.food });
@@ -22,13 +21,21 @@ class EatenItem extends React.Component {
   // }
 
   render() {
-  console.log('data', data);
-    const eaten = this.props.eatenItems.filter(item => item.status === 'eaten')
-    const foodItems = eaten.map(item => {
+    // console.log("data", data);
+    // const eaten = this.props.eatenItems.filter(
+    //   (item) => item.status === "eaten"
+    // );
+    const foodItems = this.props.eatenItems.map((item) => {
       return (
-        <ItemCard key={item.itemID} item={item} itemId={item.itemID} />
-      )
-    })
+        <ItemCard
+          key={item.itemID}
+          item={item}
+          itemId={item.itemID}
+          setCurrentData={this.props.setCurrentData}
+          currentData={this.props.currentData}
+        />
+      );
+    });
     return (
       <>
         <div className="eaten-container">
@@ -36,7 +43,7 @@ class EatenItem extends React.Component {
           {foodItems}
         </div>
       </>
-    )
+    );
   }
 }
 
