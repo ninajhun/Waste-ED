@@ -2,14 +2,10 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Modal, Button, Container, Row, Col } from "react-bootstrap";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-const App = () => {
-  const [startDate, setStartDate] = useState(new Date());
 
-  const handleSave = () => {};
-  // const addDays = () => {
-  //   setStartDate(useState.setDate(useState.getDate() + 10))
-  // }
+
+function AddItemModal() {
+  const [startDate, setStartDate] = useState(new Date());
 
   return (
     <Modal.Dialog className="h-50 inline-block w-70">
@@ -92,7 +88,7 @@ const App = () => {
       </Modal.Body>
 
       <Modal.Footer className="mx-auto">
-        <Button className="" variant="secondary" onClick={handleSave}>
+        <Button className="" variant="secondary">
           Save
         </Button>
       </Modal.Footer>
@@ -100,4 +96,4 @@ const App = () => {
   );
 };
 
-export default App;
+export {AddItemModal};
