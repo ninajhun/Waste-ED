@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { data } from "../data";
 import { Form, InputGroup } from "react-bootstrap";
-import { fetchFoodAPI } from "../fetchAPI";
+// import { fetchFoodAPI } from "../fetchAPI";
 
 function AddItemBar() {
   const [value, setValue] = useState("");
   // const [foodSuggestions, setFoodSuggestions] = useState([]); //array of 5 results for autocomplete.
-  const [foodPic, setFoodPic] = useState("");
+  // const [foodPic, setFoodPic] = useState("");
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -38,7 +38,7 @@ function AddItemBar() {
       foodItem: value.toLowerCase(),
       servings: 1,
       expiration: date,
-      img: foodPic,
+      // img: foodPic,
       status: "uneaten",
       itemID: data.nextId,
     };
@@ -71,4 +71,4 @@ function AddItemBar() {
   );
 }
 
-export { AddItemBar };
+export { AddItemBar};

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import AddItemBar from "../components/AddItemBar";
+import React, { useState, useEffect, useCallback } from "react";
+import { AddItemBar } from "../components/AddItemBar";
 import { Container, Row, Col } from "react-bootstrap";
 // import fetchAPI from "../fetchAPI"
 import UneatenItem from "../components/UneatenItem";
@@ -24,12 +24,12 @@ export default function HomePage(props) {
   // const [currentData, setCurrentData] = useState()
 
   useEffect(() => {
-
-    setEatenItems(data.food.filter(item => item.status === 'eaten'))
+      setEatenItems(data.food.filter(item => item.status === 'eaten'))
     setUneatenItems(data.food.filter(item => item.status === 'uneaten'))
     setWastedItems(data.food.filter(item => item.status === 'waste'))
-  })
-  
+
+  },)
+
 
   return (
 
