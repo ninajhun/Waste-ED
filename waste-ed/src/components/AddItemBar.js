@@ -5,7 +5,7 @@ import { fetchFoodAPI } from "../fetchAPI";
 
 function AddItemBar() {
   const [value, setValue] = useState("");
-  // const [foodSuggestions, setFoodSuggestions] = useState([]); //array of 5 results for autocomplete
+  // const [foodSuggestions, setFoodSuggestions] = useState([]); //array of 5 results for autocomplete.
   const [foodPic, setFoodPic] = useState("");
 
   const handleChange = (event) => {
