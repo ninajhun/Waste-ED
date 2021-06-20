@@ -1,23 +1,32 @@
 import React from 'react';
 import ItemCard from './ItemCard';
+import { data } from '../data';
 
-const jsonData = localStorage.getItem("local-data");
-const items = JSON.parse(jsonData);
 
 class EatenItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: items
+      items: data.food
     }
+    // this.updateList = this.updateList.bind(this);
   }
 
+  // updateList() {
+  //   this.setState({ items: data.food });
+  //   console.log('hi');
+  // }
+
+  // componentDidUpdate() {
+
+  // }
 
   render() {
-    const eaten = this.state.items.filter(item => item.status === 'eaten')
+  console.log('data', data);
+    const eaten = this.props.eatenItems.filter(item => item.status === 'eaten')
     const foodItems = eaten.map(item => {
       return (
-        <ItemCard key={item.foodItem} item={item}/>
+        <ItemCard key={item.itemID} item={item} itemId={item.itemID} />
       )
     })
     return (
