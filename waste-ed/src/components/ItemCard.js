@@ -39,7 +39,7 @@ export default class ItemCard extends React.Component {
 
     return (
       <>
-        <div className={status === 'uneaten' ? `item-card ${cardClass}` : 'item-card'}>
+        < div className={status === 'uneaten' ? `item-card ${cardClass}` : 'item-card'} >
           <div className="display-item">
             <img src={this.props.item.img} alt="food" className="food-image"/>
             <div className="food-text">
@@ -61,7 +61,7 @@ export default class ItemCard extends React.Component {
               <i className="fas fa-check icon check-mark" onClick={() => {
                   this.setState({ status: 'eaten'});
                   this.props.item.status = 'eaten';
-                  
+
               }}/>
               <i className="fas fa-trash-alt icon trash" onClick={() => {
                   this.setState({ status: 'waste'});

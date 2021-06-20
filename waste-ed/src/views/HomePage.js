@@ -24,12 +24,15 @@ export default function HomePage(props) {
   // const [currentData, setCurrentData] = useState()
 
   useEffect(() => {
-    setEatenItems(data.food.filter((item) => item.status === "eaten"));
-    setUneatenItems(data.food.filter((item) => item.status === "uneaten"));
-    setWastedItems(data.food.filter((item) => item.status === "waste"));
-  });
+
+    setEatenItems(data.food.filter(item => item.status === 'eaten'))
+    setUneatenItems(data.food.filter(item => item.status === 'uneaten'))
+    setWastedItems(data.food.filter(item => item.status === 'waste'))
+  })
+  
 
   return (
+
     <>
       <Container className="mt-5">
         <AddItemBar mt={5} />
