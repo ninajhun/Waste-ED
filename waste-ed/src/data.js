@@ -1,58 +1,7 @@
 let data = {
-<<<<<<< HEAD
   food: [],
   nextId: 1,
 };
-=======
-  food: [
-    {
-      foodItem: 'apple',
-      servings: 1,
-      expiration: 7,
-      img: "img",
-      status: "uneaten",
-      itemID: 1,
-    },
-    {
-      foodItem: 'milk',
-      servings: 1,
-      expiration: 7,
-      img: "img",
-      status: "uneaten",
-      itemID: 2,
-    },
-    {
-      foodItem: 'eggs',
-      servings: 1,
-      expiration: 7,
-      img: "img",
-      status: "uneaten",
-      itemID: 3,
-    }
-  ],
-  nextId: 1,
-};
-
-// let data = {
-//   {
-//     foodItem: 'apple',
-//     servings: 1,
-//     expiration: 7,
-//     img: "img",
-//     status: "uneaten",
-//     itemID: 1,
-//   },
-//   {
-//   foodItem: 'apple',
-//     servings: 1,
-//       expiration: 7,
-//         img: "img",
-//           status: "uneaten",
-//             itemID: 2,
-//   }
-
-// };
->>>>>>> 09e7d5e7ec11b4d69cfb6f748af858ae29462122
 
 const previousData = localStorage.getItem("local-data");
 if (previousData !== null) {
