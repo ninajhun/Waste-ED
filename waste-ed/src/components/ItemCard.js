@@ -1,5 +1,5 @@
 import React from 'react';
-import { data } from '../data';
+// import { data } from '../data';
 
 export default class ItemCard extends React.Component {
   constructor(props) {
@@ -8,14 +8,18 @@ export default class ItemCard extends React.Component {
       status: '',
       expirationDate: ''
     }
-    this.updateList = this.updateList.bind(this);
+    // this.updateList = this.updateList.bind(this);
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.status !== prevProps.status) {
-      this.setState({ status: this.state.status });
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   console.log('prevProps:', prevProps);
+  //   console.log('this.props:', this.props);
+  //   console.log('this.state:', this.state);
+  //   if (this.props.status !== prevProps.status) {
+  //     // this.setState({ status: this.state.status });
+
+  //   }
+  // }
 
   render () {
     let cardClass = '';
@@ -55,12 +59,13 @@ export default class ItemCard extends React.Component {
             ?
             <>
               <i className="fas fa-check icon check-mark" onClick={() => {
+                  this.setState({ status: 'eaten'});
                   this.props.item.status = 'eaten';
-                  this.props.updateList()
+                  
               }}/>
               <i className="fas fa-trash-alt icon trash" onClick={() => {
+                  this.setState({ status: 'waste'});
                   this.props.item.status = 'waste';
-                  this.props.updateList()
               }} />
             </>
             :

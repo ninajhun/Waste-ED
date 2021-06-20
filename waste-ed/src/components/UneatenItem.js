@@ -9,20 +9,29 @@ class UneatenItem extends React.Component {
     this.state = {
       items: data.food
     }
-    this.updateList = this.updateList.bind(this);
+    // this.updateList = this.updateList.bind(this);
   }
 
-  updateList() {
-    this.setState({ items: data.food });
-    console.log('hi');
+  // updateList() {
+  //   this.setState({ items: data.food });
+  //   console.log('hi');
+  // }
+
+  componentDidUpdate(prevProps) {
+    console.log('prevProps:', prevProps);
+    console.log('this.props:', this.props);
+    console.log('this.state:', this.state);
+    if (this.props.status !== prevProps.status) {
+      this.setState({ status: this.state.status });
+    }
   }
 
   render() {
     console.log('data', data);
-    const uneaten = this.state.items.filter(item => item.status === 'uneaten');
+    const uneaten = this.props.uneatenItems.filter(item => item.status === 'uneaten');
     const foodItems = uneaten.map(item => {
       return (
-        <ItemCard key={item.itemID} item={item} itemId={item.itemID} updateList={this.updateList}/>
+        <ItemCard key={item.itemID} item={item} itemId={item.itemID}/>
       )
     });
     return (

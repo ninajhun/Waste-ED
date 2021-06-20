@@ -9,23 +9,24 @@ class EatenItem extends React.Component {
     this.state = {
       items: data.food
     }
-    this.updateList = this.updateList.bind(this);
+    // this.updateList = this.updateList.bind(this);
   }
 
-  updateList() {
-    this.setState({ items: data.food });
-    console.log('hi');
-  }
+  // updateList() {
+  //   this.setState({ items: data.food });
+  //   console.log('hi');
+  // }
 
   // componentDidUpdate() {
 
   // }
 
   render() {
-    const eaten = this.state.items.filter(item => item.status === 'eaten')
+  console.log('data', data);
+    const eaten = this.props.eatenItems.filter(item => item.status === 'eaten')
     const foodItems = eaten.map(item => {
       return (
-        <ItemCard key={item.itemID} item={item} itemId={item.itemID} updateList={this.updateList} />
+        <ItemCard key={item.itemID} item={item} itemId={item.itemID} />
       )
     })
     return (
