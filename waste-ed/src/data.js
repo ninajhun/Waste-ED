@@ -3,6 +3,7 @@ let data = {
   nextId: 1,
 };
 
+
 const previousData = localStorage.getItem("local-data");
 if (previousData !== null) {
   data = JSON.parse(previousData);
