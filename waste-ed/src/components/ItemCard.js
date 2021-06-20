@@ -58,7 +58,7 @@ export default class ItemCard extends React.Component {
             {status === 'uneaten'
             ?
             <>
-              <i className="fas fa-check icon check-mark" onClick={() => {
+              <i className="fas fa-utensils icon check-mark" onClick={() => {
                   this.setState({ status: 'eaten'});
                   this.props.item.status = 'eaten';
 
