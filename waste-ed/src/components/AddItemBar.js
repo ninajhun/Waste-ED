@@ -37,8 +37,8 @@ function AddItemBar() {
     const newItem = {
       foodItem: value.toLowerCase(),
       servings: 1,
-      expiration: date,
-      img: foodPic,
+      expiration: 7,
+      img: 'https://nix-tag-images.s3.amazonaws.com/391_thumb.jpg',
       status: "uneaten",
       itemID: data.nextId,
     };

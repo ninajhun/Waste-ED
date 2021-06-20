@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e9fcf5 !important;
 }
 
 code {
@@ -52,4 +53,23 @@ code {
   color: #444444;
   width: 12rem;
   margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.servings-number {
+  margin: 0;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.servings-text {
+  font-size: 1.4rem;
+  margin: 0;
+  margin-bottom: 2rem;
+  font-style: italic;
+  /* font-weight: bold; */
+}
+
+.form-control {
+  padding-left: 2rem;
 }
