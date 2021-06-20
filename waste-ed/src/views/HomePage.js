@@ -33,7 +33,7 @@ export default function HomePage(props) {
 
   return (
 
-    <>
+    <div className="home-page">
       <Container className="mt-5">
         <AddItemBar mt={5} />
       </Container>
@@ -50,6 +50,6 @@ export default function HomePage(props) {
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 }

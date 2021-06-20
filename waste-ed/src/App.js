@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //render LandingPage and HomePage
 //change view w/ setView()
 function App() {
-  const [view, setView] = useState("home-page");
+  const [view, setView] = useState("landing-page");
 
   if (view === "landing-page") {
     return (

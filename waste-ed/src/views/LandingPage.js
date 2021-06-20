@@ -12,6 +12,10 @@ export default function LandingPage(props) {
         <p className="app-description">your impact on the environment</p>
       </div>
       <img className="eco-woman" src={img} alt="eco-friendly-woman"></img>
+      <div>
+        <h2 class="servings-number">32</h2>
+        <p class="servings-text">servings saved so far!</p>
+      </div>
       <button className="get-started" onClick={() => setView("home-page")}>Get Started</button>
     </div>
   );
