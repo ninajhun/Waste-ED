@@ -1,4 +1,5 @@
-import React, { useState, useEffect} from "react";
+
+import React, { useState, useEffect } from "react";
 import { AddItemBar } from "../components/AddItemBar";
 import { Container, Row, Col } from "react-bootstrap";
 // import fetchAPI from "../fetchAPI"
@@ -29,6 +30,7 @@ export default function HomePage(props) {
     setWastedItems(data.food.filter(item => item.status === 'waste'))
 
   },)
+
 
 
   return (
